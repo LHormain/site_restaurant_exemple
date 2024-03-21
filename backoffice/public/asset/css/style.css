@@ -1,0 +1,190 @@
+:root {
+    /* polices */
+    --montserrat: 'Montserrat', sans-serif;
+    --oswald: 'Oswald', sans-serif;
+    --tangerine:'Tangerine', cursive;
+    /* couleurs */
+    --noir: #0b0909;
+    --blanc: #fff;
+    --or: #c88004;
+    --sienne: #8c682d;
+    --or50:#c8800474;
+    --or25:#c8800432;
+    --orange : #ec7c20af;
+    --orange2 :rgba(236, 124, 32, 0.258);
+    --rouge: #680606;
+    --vert: #BCC4A9;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+}
+nav {
+    min-height: 100vh;
+}
+a {
+    text-decoration: none;
+}
+.card {
+    height: 200px;
+}
+.card:hover {
+    background-color: var(--or50);
+}
+.card img {
+    opacity: 25%;
+    max-height: 100px;
+}
+.card p {
+    color: black;
+}
+.card-header {
+    background-color: var(--or);
+    color: var(--blanc);
+    font-weight: 700;
+}
+/* tableaux */
+.icone_tab {
+    width: 30px;
+    border-radius: 15px;
+}
+.afficher {
+    background-color: var(--vert);
+}
+.changer:hover {
+    background-color: cadetblue;
+}
+.supprimer:hover {
+    background-color: var(--rouge);
+}
+.modifier:hover {
+    background-color: var(--orange);
+}
+.img_tab {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.max_capacite {
+    background-color: var(--rouge);
+    color: var(--blanc);
+}
+.max_capacite::after {
+    content: ' capacité maximale dépasser';
+}
+.reservation {
+    background-color: var(--rouge);
+    color: var(--blanc);
+}
+.reservation::after {
+    content: ' date déjà réservée';
+}
+/* ---------------------------------- */
+/*   changement de couleur à la main  */
+/* ---------------------------------- */
+
+.btn-primary, .btn-primary:disabled, .btn-primary:active, .btn-primary:focus {
+    background-color: var(--or);
+    border-color: var(--or);
+}
+.btn-primary:hover {
+    background-color: var(--sienne);
+    border-color: var(--sienne);
+}
+.btn-outline-primary:focus, .btn-primary:focus, .btn-primary:active:focus, .btn-outline-primary:active:focus {
+    box-shadow: 0 0 0 0.25rem var(--or50);
+}
+.btn-outline-primary {
+    border-color: var(--or);
+    color: var(--or);
+}
+.btn-outline-primary:hover {
+    background-color: var(--sienne);
+    border-color: var(--sienne);
+}
+.border-primary {
+    border-color: var(--or)!important;
+}
+.bg-dark {
+    background-color: var(--noir)!important;
+}
+.bg-light {
+    background-color: var(--blanc)!important;
+}
+.table>:not(caption)>*>* {
+    background-color: var(--blanc);
+}
+.table-primary {
+    --bs-table-bg: var(--blanc);
+    --bs-table-striped-bg: var(--or25);
+    --bs-table-striped-color: #000;
+    --bs-table-active-bg: var(--blanc);
+    --bs-table-active-color: #000;
+    --bs-table-hover-bg: var(--or50);
+    --bs-table-hover-color: #000;
+}
+.table-warning {
+    --bs-table-bg: var(--orange);
+    --bs-table-striped-bg: var(--orange2);
+    --bs-table-striped-color: #000;
+    --bs-table-active-bg: var(--orange2);
+    --bs-table-active-color: #000;
+    --bs-table-hover-bg: var(--orange);
+    --bs-table-hover-color: #000;
+}
+.bg-success {
+    background-color: var(--vert)!important;
+}
+.bg-danger {
+    background-color: var(--rouge)!important;
+}
+.bg-warning {
+    background-color: var(--orange)!important;
+}
+/* --------------------------------------- */
+/*            impression devis             */
+/* --------------------------------------- */
+.imprimer {
+    display: none;
+}
+nav {
+    display: flex;
+    flex-direction: column;
+}
+@media print {
+    .logo {
+        max-height: 60px;
+        object-fit: cover;
+    }
+    .entreprise {
+        font-family: var(--tangerine); 
+        font-size:40px; 
+        font-weight:700;
+    }
+    nav {
+        display: none;
+    }
+    .page-impression {
+        width: 100vw;
+    }
+    .imprimer {
+        display: block;
+    }
+    .no-print {
+        display: none;
+    }
+    .devis_td {
+        text-align: right;
+    }
+    @page {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    body {
+        padding-top: 72px;
+        padding-bottom: 72px ;
+    }
+}
